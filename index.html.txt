@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zehra ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:
+        radial-gradient(circle at 50% -10%,#4b1234 0%,#180916 35%,#060206 75%);
+    color:#fff;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.13;
+    background-image:
+        radial-gradient(#fff 1px,transparent 1px);
+    background-size:55px 55px;
+    z-index:-1;
+}
+
+.container{
+    width:min(1050px,92%);
+    margin:auto;
+}
+
+section{
+    padding:90px 0;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+}
+
+.badge{
+    display:inline-block;
+    padding:10px 20px;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:999px;
+    background:rgba(255,255,255,.05);
+    color:#ffc4df;
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:clamp(60px,11vw,120px);
+    line-height:.9;
+    background:linear-gradient(
+        135deg,
+        #fff,
+        #ffb5d5,
+        #e66da3
+    );
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    max-width:700px;
+    margin:30px auto 0;
+    color:#e7cad8;
+    font-size:20px;
+    line-height:1.8;
+}
+
+.scroll{
+    margin-top:50px;
+    color:#d7a9bf;
+    animation:bounce 1.8s infinite;
+}
+
+@keyframes bounce{
+    50%{
+        transform:translateY(10px);
+    }
+}
+
+/* TITLES */
+
+.title{
+    text-align:center;
+    font-size:clamp(34px,5vw,56px);
+    margin-bottom:15px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#bfa8b5;
+    margin-bottom:45px;
+}
+
+/* GLASS */
+
+.glass{
+    background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.09),
+        rgba(255,255,255,.025)
+    );
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:28px;
+    box-shadow:0 25px 80px rgba(0,0,0,.5);
+    backdrop-filter:blur(16px);
+}
+
+/* MESSAGE */
+
+.message{
+    padding:40px;
+    text-align:center;
+    font-size:20px;
+    line-height:1.9;
+    color:#ead9e2;
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.gallery img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    border-radius:24px;
+    border:1px solid rgba(255,255,255,.12);
+    transition:.4s;
+}
+
+.gallery img:hover{
+    transform:translateY(-8px) scale(1.02);
+    box-shadow:0 20px 50px rgba(200,70,130,.25);
+}
+
+/* CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.card{
+    padding:30px;
+    min-height:200px;
+}
+
+.card h3{
+    color:#ffb5d5;
+    font-size:22px;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#cdbbc5;
+    line-height:1.7;
+}
+
+/* VIDEO */
+
+.video{
+    padding:14px;
+}
+
+.video iframe{
+    display:block;
+    width:100%;
+    height:500px;
+    border:0;
+    border-radius:20px;
+    background:#000;
+}
+
+/* MUSIC */
+
+.music{
+    display:grid;
+    grid-template-columns:300px 1fr;
+    gap:35px;
+    align-items:center;
+    padding:28px;
+}
+
+.music-cover{
+    width:100%;
+    aspect-ratio:1;
+    border-radius:22px;
+    overflow:hidden;
+    background:#10070f;
+    box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+
+.music-cover img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.music h2{
+    font-size:32px;
+    margin-bottom:8px;
+}
+
+.artist{
+    color:#d9a9c1;
+    margin-bottom:22px;
+}
+
+.spotify{
+    width:100%;
+    height:152px;
+    border:0;
+    border-radius:14px;
+}
+
+/* QUESTION */
+
+.question{
+    text-align:center;
+    padding:60px 25px;
+}
+
+.question button{
+    border:0;
+    border-radius:999px;
+    padding:16px 30px;
+    font-size:17px;
+    color:white;
+    cursor:pointer;
+    background:linear-gradient(
+        90deg,
+        #ef75a9,
+        #b94f82
+    );
+    box-shadow:0 12px 35px rgba(214,76,138,.3);
+    transition:.3s;
+}
+
+.question button:hover{
+    transform:scale(1.05);
+}
+
+.answer{
+    display:none;
+    max-width:700px;
+    margin:30px auto 0;
+    color:#f5dce8;
+    font-size:21px;
+    line-height:1.8;
+}
+
+/* FINAL */
+
+.final{
+    min-height:70vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.final h2{
+    font-size:clamp(48px,8vw,95px);
+    background:linear-gradient(
+        90deg,
+        #fff,
+        #ff8fbd
+    );
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.final p{
+    margin-top:25px;
+    color:#cdb5c2;
+    font-size:20px;
+}
+
+/* FLOATING HEARTS */
+
+.heart{
+    position:fixed;
+    bottom:-40px;
+    pointer-events:none;
+    animation:float 7s linear forwards;
+    z-index:100;
+}
+
+@keyframes float{
+    to{
+        transform:
+            translateY(-110vh)
+            rotate(25deg);
+        opacity:0;
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:750px){
+
+    section{
+        padding:65px 0;
+    }
+
+    .cards,
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .music{
+        grid-template-columns:1fr;
+    }
+
+    .music-cover{
+        max-width:300px;
+        margin:auto;
+    }
+
+    .gallery img{
+        height:320px;
+    }
+
+    .message{
+        padding:28px 22px;
+        font-size:18px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .video iframe{
+        height:300px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container">
+
+<div class="badge">
+    Biriktirdiğimiz anılara...
+</div>
+
+<h1>Zehra.</h1>
+
+<p>
+Bazı insanlar hayatına girer ve sıradan bir günü bile
+hatırlanmaya değer yapar.
+<br>
+Benim için o insan sensin.
+</p>
+
+<div class="scroll">
+    Aşağı kaydır ↓
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MESAJ -->
+
+<section>
+
+<div class="container">
+
+<h2 class="title">
+    Sana söylemek istediklerim
+</h2>
+
+<p class="subtitle">
+    Belki yüz yüze söylemekten daha kolay olur diye...
+</p>
+
+<div class="glass message">
+
+Seni gerçekten çok özledim.
+
+<br><br>
+
+Yaşadığımız güzel şeyleri, birlikte güldüğümüz
+anları ve yan yana olduğumuz o zamanı unutmadım.
+
+<br><br>
+
+Her şey kusursuz değildi, biliyorum.
+Ama benim için güzel olan kısmı hâlâ çok gerçek.
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- GALERİ -->
+
+<section>
+
+<div class="container">
+
+<h2 class="title">
+    Bizden kalanlar ❤️
+</h2>
+
+<p class="subtitle">
+    Küçük anılar, büyük hisler.
+</p>
+
+<div class="gallery">
+
+<img src="https://i.hizliresim.com/da6pztzv.jpg" alt="Anımız 1">
+
+<img src="https://i.hizliresim.com/zqjdxsv7.jpg" alt="Anımız 2">
+
+<img src="https://i.hizliresim.com/so8pmf8x.jpg" alt="Anımız 3">
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- DUYGULAR -->
+
+<section>
+
+<div class="container">
+
+<h2 class="title">
+    Biraz da içimden geçenler
+</h2>
+
+<div class="cards">
+
+<div class="glass card">
+
+<h3>
+    Özledim.
+</h3>
+
+<p>
+Yanında olmayı, konuşmayı, birlikte gülmeyi
+ve en basit anları bile paylaşmayı.
+</p>
+
+</div>
+
+
+<div class="glass card">
+
+<h3>
+    Unutmadım.
+</h3>
+
+<p>
+Birlikte geçirdiğimiz o güzel zamanı
+ve bende bıraktığın izleri.
+</p>
+
+</div>
+
+
+<div class="glass card">
+
+<h3>
+    Hâlâ buradayım.
+</h3>
+
+<p>
+Geçmişi değiştiremem ama konuşup
+birbirimizi gerçekten dinleyebiliriz.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- VİDEO -->
+
+<section>
+
+<div class="container">
+
+<h2 class="title">
+    
+</h2>
+
+<p class="subtitle">
+    "Dünyanın en güzel çiçeği bile sana baktığımda soluk kalır."
+</p>
+
+<div class="glass video">
+
+<iframe 
+    src="https://streamable.com/e/89yfhf" 
+    allow="autoplay; encrypted-media" 
+    allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MÜZİK -->
+
+<section>
+
+<div class="container">
+
+<h2 class="title">
+    Bu şarkı biraz da seni anlatıyor
+</h2>
+
+<p class="subtitle">
+    Gökhan Kırdar — Yerine Sevemem
+</p>
+
+
+<div>
+
+<h2>
+    Yerine Sevemem
+</h2>
+
+<div class="artist">
+    Gökhan Kırdar
+</div>
+
+
+<!-- SPOTIFY -->
+
+<iframe
+class="spotify"
+src="https://open.spotify.com/embed/track/3Gu4p3M9J05Ef4rA8MEdNA?utm_source=generator"
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+loading="lazy">
+</iframe>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SORU -->
+
+<section>
+
+<div class="container">
+
+<div class="glass question">
+
+<h2 class="title">
+    Bir şey sorabilir miyim?
+</h2>
+
+<p class="subtitle">
+    Evet veya hayır demeden önce bir saniye dur.
+</p>
+
+<button onclick="showAnswer()">
+    Tıkla ❤️
+</button>
+
+
+<div id="answer" class="answer">
+
+Geçmişte olan her şeyi yok sayalım demiyorum.
+
+<br>
+
+Sadece yeniden, doğru düzgün
+birbirimizi gerçekten sevmeye ne dersin?
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SON -->
+
+<section class="final">
+
+<div class="container">
+
+<h2>
+    Seni çok özledim.
+</h2>
+
+<p>
+"YALVARIRIM" 
+</p>
+
+</div>
+
+</section>
+
+
+<script>
+
+/* SORU CEVABI */
+
+function showAnswer(){
+
+    const answer =
+        document.getElementById("answer");
+
+    answer.style.display = "block";
+
+}
+
+
+/* KALP ANİMASYONU */
+
+function createHeart(){
+
+    const heart =
+        document.createElement("div");
+
+    heart.className = "heart";
+
+    const hearts = [
+        "❤️",
+        "💗",
+        "💕",
+        "💖",
+        "♡"
+    ];
+
+    heart.textContent =
+        hearts[
+            Math.floor(
+                Math.random() * hearts.length
+            )
+        ];
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        (14 + Math.random() * 22) + "px";
+
+    heart.style.animationDuration =
+        (5 + Math.random() * 4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(
+        () => heart.remove(),
+        9000
+    );
+}
+
+setInterval(createHeart,1200);
+
+</script>
+
+</body>
+</html>
